@@ -22,7 +22,7 @@ const SousEtapesDetail = () => {
         setLoading(true);
         // Promo code
         const resPromo = await fetch(
-          `http://localhost:3000/api/promos/${promoId}`
+          `https://backend-u89i.onrender.com/api/promos/${promoId}`
         );
         if (resPromo.ok) {
           const promoData = await resPromo.json();
@@ -31,7 +31,7 @@ const SousEtapesDetail = () => {
 
         // Étape name
         const resEtape = await fetch(
-          `http://localhost:3000/api/promos/${promoId}/etapes/`
+          `https://backend-u89i.onrender.com/api/promos/${promoId}/etapes/`
         );
         if (resEtape.ok) {
           const etapeData = await resEtape.json();
@@ -46,7 +46,7 @@ const SousEtapesDetail = () => {
 
         // Sous-étapes
         const resSous = await fetch(
-          `http://localhost:3000/api/promos/${promoId}/etapes/${etapeId}/sous_etapes`
+          `https://backend-u89i.onrender.com/api/promos/${promoId}/etapes/${etapeId}/sous_etapes`
         );
         if (!resSous.ok) throw new Error('Sous-étapes non trouvées');
         const sousData = await resSous.json();
@@ -73,7 +73,7 @@ const SousEtapesDetail = () => {
     try {
       const statusText = updated[id] ? 'Terminé' : 'À faire';
       const res = await fetch(
-        `http://localhost:3000/api/promos/${promoId}/etapes/${etapeId}/sous_etapes/${id}`,
+        `https://backend-u89i.onrender.com/api/promos/${promoId}/etapes/${etapeId}/sous_etapes/${id}`,
         {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
@@ -100,7 +100,7 @@ const SousEtapesDetail = () => {
     }
     const subject = `Info OP ${promoCode}`;
     try {
-      const res = await fetch('http://localhost:3000/api/send-mail', {
+      const res = await fetch('https://backend-u89i.onrender.com/api/send-mail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, subject, message }),
