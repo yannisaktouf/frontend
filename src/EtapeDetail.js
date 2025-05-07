@@ -41,8 +41,8 @@ export default function PromoDetail() {
     setMessage('');
     try {
       const [resPromo, resEtapes] = await Promise.all([
-        fetch(`http://localhost:3000/api/promos/${promoId}`),
-        fetch(`http://localhost:3000/api/promos/${promoId}/etapes`)
+        fetch(`https://backend-u89i.onrender.com/api/promos/${promoId}`),
+        fetch(`https://backend-u89i.onrender.com/api/promos/${promoId}/etapes`)
       ]);
       if (!resPromo.ok) throw new Error('Erreur chargement promo');
       if (!resEtapes.ok) throw new Error('Erreur chargement étapes');
@@ -55,7 +55,7 @@ export default function PromoDetail() {
       const prog = {};
       await Promise.all(etapesData.map(async e => {
         const resSubs = await fetch(
-          `http://localhost:3000/api/promos/${promoId}/etapes/${e.id}/sous_etapes`
+          `https://backend-u89i.onrender.com/api/promos/${promoId}/etapes/${e.id}/sous_etapes`
         );
         if (!resSubs.ok) return;
         const subs = await resSubs.json();
@@ -70,7 +70,7 @@ export default function PromoDetail() {
         const label = labelByStatus[key];
         if (e.etape_status !== label) {
           await fetch(
-            `http://localhost:3000/api/promos/${promoId}/etapes/${e.id}`,
+            `https://backend-u89i.onrender.com/api/promos/${promoId}/etapes/${e.id}`,
             {
               method: 'PUT',
               headers: { 'Content-Type': 'application/json' },
