@@ -58,7 +58,7 @@ function PromoList() {
     async function fetchPromos() {
       setChargement(true);
       try {
-        const { data } = await axios.get('http://localhost:3000/api/promos');
+        const { data } = await axios.get('https://backend-u89i.onrender.com/api/promos');
         setPromos(data);
         const semaines = Array.from(new Set(data.map(p => getSemaineAnnee(p.start_date)))).sort();
         setSemainesDispo(semaines);
