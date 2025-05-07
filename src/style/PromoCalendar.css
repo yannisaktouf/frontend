@@ -1,0 +1,56 @@
+/* Container principal du calendrier */
+.promo-calendar-container {
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 16px;
+}
+
+/* Titre */
+.promo-calendar-container h1 {
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Ajustements de toolbar */
+.rbc-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.rbc-btn-group button {
+  background: #3182ce;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.rbc-btn-group button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Cellules du calendrier */
+.rbc-day-slot .rbc-time-slot,
+.rbc-day-bg .rbc-row-bg {
+  background: #fff;
+}
+
+/* Événements */
+.rbc-event {
+  padding: 2px 4px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+}
+
+/* Mouchette à fond clickable */
+.rbc-event:hover {
+  opacity: 0.9;
+}

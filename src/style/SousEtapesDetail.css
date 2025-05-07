@@ -1,0 +1,164 @@
+/* SousEtapesDetail.css */
+.sous-etapes-container {
+  width: 95%;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 3rem;
+  background: #fafafa;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.back-link {
+  background: none;
+  border: none;
+  color: #1d4ed8;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: color 0.2s ease;
+}
+.back-link:hover {
+  color: #1e40af;
+}
+
+.sous-etapes-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2rem;
+}
+
+.progress-overall {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  gap: 1rem;
+}
+.progress-overall span {
+  font-size: 1.125rem;
+  color: #374151;
+}
+.progress-bar-container {
+  flex: 1;
+  height: 14px;
+  background: #e5e7eb;
+  border-radius: 7px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  background: #2563eb;
+  transition: width 0.4s ease;
+}
+
+.sous-etapes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.sous-etape-item {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.sous-etape-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+.sous-etape-item.termine {
+  border-left: 6px solid #10b981;
+}
+.sous-etape-item.a-faire {
+  border-left: 6px solid #f59e0b;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  font-size: 1rem;
+  color: #1f2937;
+}
+.checkbox-label input[type="checkbox"] {
+  width: 1.5rem;
+  height: 1.5rem;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.email-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.recipient-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.email-section input,
+.email-section textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+.email-section input:focus,
+.email-section textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+.email-section textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.send-button {
+  justify-self: start;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(90deg, #2563eb 0%, #1e40af 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+.send-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+.send-button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}

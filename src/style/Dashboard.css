@@ -1,0 +1,109 @@
+/* -------------------  Palette Carrefour  ------------------- */
+:root{
+  --carrefour-blue:   #00387b;
+  --carrefour-red:    #bb1e10;
+  --carrefour-orange: #f67828;
+  --carrefour-green:  #237f52;
+
+  --glass-white: rgba(255,255,255,0.25);
+  --shadow-lg:   0 8px 32px rgba(0,0,0,.15);
+}
+
+*{ box-sizing:border-box; }
+
+.dashboard-glass{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:2rem;
+  font-family:'Poppins',sans-serif;
+  background:radial-gradient(circle at 30% 20%,#ffffff 0%,#f3f6fb 40%,#e9eff7 80%);
+}
+
+.dashboard-content{
+  background:var(--glass-white);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  box-shadow:var(--shadow-lg);
+  border-radius:24px;
+  padding:4rem 4.5rem;
+  text-align:center;
+  width:100%;
+  max-width:820px;
+}
+
+.welcome-title{
+  font-size:2.6rem;
+  font-weight:600;
+  color:var(--carrefour-blue);
+  margin-bottom:1.5rem;
+}
+
+/* -------- logo au centre, juste avant le sous-titre -------- */
+.carrefour-logo-inline{
+  height:64px;                 /* ajuste à ton goût */
+  margin:0 auto 1.2rem;        /* centre + espace sous le logo */
+  cursor:pointer;
+  user-select:none;
+}
+
+.dashboard-subtitle{
+  font-size:1.6rem;            /* agrandi + gras */
+  font-weight:600;
+  color:#555;
+  margin-bottom:2.5rem;
+}
+
+.button-group{
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
+}
+
+/* ------------------ boutons ------------------ */
+.glass-button{
+  width:100%;
+  padding:1.4rem 2rem;
+  font-size:1.25rem;
+  font-weight:500;
+  border:none;
+  border-radius:18px;
+  color:#fff;
+  cursor:pointer;
+  transition:all .22s ease;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:.6rem;
+}
+.glass-button:hover{
+  transform:translateY(-4px);
+  filter:brightness(1.12);
+  box-shadow:0 9px 26px rgba(0,0,0,.22);
+}
+
+.glass-button.blue   { background:var(--carrefour-blue);   }
+.glass-button.orange { background:var(--carrefour-blue); }
+.glass-button.green  { background:var(--carrefour-blue);  }
+.glass-button.logout { background:var(--carrefour-red);    }
+
+/* ------------- responsive ------------- */
+@media(max-width:480px){
+  .dashboard-content{ padding:3rem; }
+
+  .carrefour-logo-inline{
+    height:48px;
+    margin-bottom:1rem;
+  }
+
+  .dashboard-subtitle{
+    font-size:1.4rem;
+  }
+
+  .glass-button{
+    font-size:1.1rem;
+    padding:1.2rem 1.4rem;
+  }
+}

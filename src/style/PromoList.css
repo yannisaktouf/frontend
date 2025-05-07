@@ -1,0 +1,205 @@
+.promos-container {
+  padding: 20px;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.promos-container h1 {
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.promos-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Maximum 3 par ligne */
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+/* Responsive :
+   2 colonnes pour < 900px, 1 colonne pour < 600px */
+@media (max-width: 900px) {
+  .promos-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .promos-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.promo-item {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.promo-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.promo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.promo-code {
+  color: #007bff;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.promo-code:hover {
+  text-decoration: underline;
+}
+
+.promo-status {
+  text-transform: capitalize;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.promo-status.en-cours { background: #fff3e0; color: #ef6c00; }
+.promo-status.à-venir  { background: #e3f2fd; color: #1976d2; }
+.promo-status.terminé   { background: #e8f5e9; color: #2e7d32; }
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+
+.filters select {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.date-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 10px;
+}
+
+.date-pill {
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  border-radius: 5px;
+  background: #f5f5f5;
+  color: #555;
+}
+
+.date-pill.start { background: #e1f5fe; }
+.date-pill.end   { background: #fff8e1; }
+
+.jours-pill {
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.j-large  { background: #93f09a; color: #2e7d32; }
+.j-medium { background: #f2d4a5; color: #ef6c00; }
+.j-small  { background: #f6e3e3; color: #f90000; }
+
+.progress-section {
+  margin-top: auto;
+}
+
+.progress-info {
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: bold;
+}
+
+.status-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.progress-container {
+  background: #e0e0e0;
+  border-radius: 8px;
+  height: 30px;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  height: 100%;
+  background: #28a745;
+  transition: width 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-text {
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.chargement, .erreur {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 20px;
+}
+
+.erreur { color: #c62828; }
+
+/* Amélioration du bouton retour dashboard */
+.btn-retour-dashboard {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(90deg, #4b5563 0%, #374151 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.1s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+.btn-retour-dashboard:hover {
+  background: linear-gradient(90deg, #374151 0%, #1f2937 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.btn-retour-dashboard:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,66 @@
+/* Conteneur de l'étape */
+.etape-container {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.etape-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Couleurs plus claires pour les statuts */
+.etape-orange {
+  background-color: #fecaca; /* rouge clair */
+  color: #991b1b; /* rouge foncé pour le texte */
+}
+
+.etape-verte {
+  background-color: #d4f5d0; /* vert clair */
+  color: #256029;
+}
+
+.etape-default {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* Bouton noir stylisé */
+.btn-styled {
+  background-color: #000;
+  color: white;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  margin-top: 10px;
+}
+
+.btn-styled:hover {
+  background-color: #111;
+  transform: scale(1.02);
+}
+
+.btn-styled[disabled] {
+  background-color: #cbd5e1;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Message de confirmation */
+.confirmation-message {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #16a34a;
+  font-weight: 500;
+}
+
+.confirmation-message.error {
+  color: #dc2626;
+}

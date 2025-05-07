@@ -1,0 +1,99 @@
+/* ----------------  PALETTE CARREFOUR  ---------------- */
+:root{
+  --c-blue-dark : #00387b;   /* Regal Blue */
+  --c-blue-light: #1956a4;
+  --c-red       : #000000;   /* Thunderbird */
+  --c-white     : #910303;
+}
+
+/* ----------  Structure générale  ---------- */
+.layout-container{
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  font-family:'Poppins',sans-serif;
+}
+
+/* =================  NAVBAR  ================= */
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:64px;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  padding:0 1rem;
+  gap:1rem;
+  background:linear-gradient(180deg,var(--c-blue-dark) 0%,var(--c-blue-light) 100%);
+  box-shadow:0 4px 8px rgba(0,0,0,.08);
+  transition:height .3s ease;
+}
+
+/* -----  Bouton de réduction  ----- */
+.collapse-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:.4rem;
+  border:none;
+  border-radius:6px;
+  background:transparent;
+  color:var(--c-white);
+  cursor:pointer;
+  transition:background-color .2s ease;
+}
+.collapse-btn:hover{ background:rgba(255,255,255,.25); }
+
+/* -----  Liste horizontale  ----- */
+.nav-links{
+  display:flex;
+  gap:.7rem;
+  flex:1;
+  flex-wrap:wrap;
+}
+.navbar.collapsed .nav-links{
+  justify-content:space-around;   /* écarte les icônes si texte masqué */
+}
+
+/* -----  Bouton / lien  ----- */
+.nav-item{
+  display:flex;
+  align-items:center;
+  gap:.4rem;
+  padding:.5rem 1rem;
+  border-radius:.5rem;
+  border:1px solid rgba(255,255,255,.20);
+  background:rgba(255,255,255,.12);
+  font-size:.9rem;
+  font-weight:600;
+  color:var(--c-red);          /* texte + icône rouges */
+  text-decoration:none;
+  transition:background-color .2s ease, transform .12s ease;
+}
+.nav-item svg{ color:var(--c-red); }
+.nav-item:hover{
+  background:rgba(255,255,255,.20);
+  transform:translateY(-2px);
+}
+
+/* -----  Actif  ----- */
+.nav-item.active{
+  background:var(--c-white);
+  color:var(--c-red);
+  border-color:var(--c-white);
+}
+.nav-item.active svg{ color:var(--c-red); }
+
+/* -----  Mode réduit : cacher le texte  ----- */
+.navbar.collapsed .nav-item span{ display:none; }
+
+/* =================  CONTENU  ================= */
+.main-content{
+  flex:1;
+  margin-top:64px;       /* décalage sous la barre fixe */
+  padding:1.5rem;
+  background:#f1f5f9;
+  overflow-y:auto;       /* seul le contenu défile */
+}
