@@ -59,7 +59,7 @@ function MesPromos() {
       setChargement(true);
       try {
         const res = await axios.get(
-          `http://localhost:3000/api/promos/intervenants/${intervenantId}/promos`
+          `https://backend-u89i.onrender.com/api/promos/intervenants/${intervenantId}/promos`
         );
         const data = res.data;
         setPromos(data);
@@ -73,7 +73,7 @@ function MesPromos() {
         await Promise.all(
           data.map(async p => {
             const resEtapes = await axios.get(
-              `http://localhost:3000/api/promos/${p.id}/etapes`
+              `https://backend-u89i.onrender.com/api/promos/${p.id}/etapes`
             );
             const etapes = resEtapes.data;
             map[p.id] = {
