@@ -31,7 +31,7 @@ function PromoCalendar() {
     const fetchPromos = async () => {
       setLoading(true);
       try {
-        const { data } = await axios.get('https://backend-u89i.onrender.com/api/promos');
+        const { data } = await axios.get('https://backend-u89i.onrender.com/promos');
         const evts = data.map((p) => {
           const start = new Date(p.start_date);
           const end = p.end_date ? new Date(p.end_date) : start;

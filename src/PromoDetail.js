@@ -44,7 +44,7 @@ const PromoDetail = () => {
 
       if (etape.etape_status !== computedLabel) {
         fetch(
-          `https://backend-u89i.onrender.com/api/promos/${promoId}/etapes/${key}`,
+          `https://backend-u89i.onrender.com/promos/${promoId}/etapes/${key}`,
           {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -75,14 +75,14 @@ const PromoDetail = () => {
       setChargement(true);
       // 1) Promo
       const resPromo = await fetch(
-        `https://backend-u89i.onrender.com/api/promos/${promoId}`
+        `https://backend-u89i.onrender.com/promos/${promoId}`
       );
       if (!resPromo.ok) throw new Error('Erreur chargement promo');
       setPromo(await resPromo.json());
 
       // 2) Étapes
       const resEtapes = await fetch(
-        `https://backend-u89i.onrender.com/api/promos/${promoId}/etapes`
+        `https://backend-u89i.onrender.com/promos/${promoId}/etapes`
       );
       if (!resEtapes.ok) throw new Error('Erreur chargement étapes');
       const dataEtapes = await resEtapes.json();
@@ -93,7 +93,7 @@ const PromoDetail = () => {
       await Promise.all(
         dataEtapes.map(async (etape) => {
           const resSous = await fetch(
-            `https://backend-u89i.onrender.com/api/promos/${promoId}/etapes/${etape.id}/sous_etapes`
+            `https://backend-u89i.onrender.com/promos/${promoId}/etapes/${etape.id}/sous_etapes`
           );
           if (!resSous.ok) return;
           const dataSous = await resSous.json();
